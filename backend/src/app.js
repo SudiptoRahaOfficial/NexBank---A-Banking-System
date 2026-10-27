@@ -30,7 +30,7 @@ app.use('/api/transaction', transactionRouter)
 
 // dummy test API for checking server
 app.get('/', (req, res) => {
-	res.send('Bank App Backend is up and running!')
+	res.send('NexBank Backend is up and running!')
 })
 
 // exporting app
