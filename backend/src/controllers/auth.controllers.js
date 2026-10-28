@@ -635,6 +635,12 @@ async function refreshTokenController(req, res) {
 		return res.status(200).json({
 			message: 'Token refreshed successfully',
 			status: 'success',
+			user: {
+				id: user._id,
+				username: user.username,
+				email: user.email,
+				verified: user.verified,
+			},
 			accessToken,
 		})
 	} catch (error) {
