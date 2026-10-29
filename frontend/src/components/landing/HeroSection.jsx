@@ -471,7 +471,7 @@ export default function HeroSection() {
 					</div>
 
 					{/* Banking product illustration */}
-					<div className='relative mx-auto w-full max-w-40 py-0 sm:max-w-64 sm:py-2 lg:max-w-none lg:py-0'>
+					<div className='relative mx-auto w-full max-w-40 py-0 sm:max-w-64 sm:py-2 lg:max-w-none lg:py-0 hidden lg:block'>
 						<PhonePreview />
 					</div>
 				</div>

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Landmark, ArrowUpRight } from 'lucide-react'
-import CurrentYear from './CurrentYear'
+import CurrentYear from '@/components/shared/CurrentYear'
 
 const footerLinks = [
 	{

@@ -177,7 +177,7 @@ function VerifyEmailContent() {
 								size={14}
 								aria-hidden='true'
 							/>
-							EMAIL VERIFICATION
+							VERIFICATION
 						</div>
 
 						<Link
@@ -372,7 +372,7 @@ function VerifyEmailContent() {
 					{/* Resend and back to signup */}
 					<div className='mt-4 flex flex-wrap items-center justify-between gap-3'>
 						<div className='flex min-w-0 flex-wrap items-center gap-1'>
-							<p className='text-sm text-slate-500'>
+							<p className='text-sm text-slate-500 hidden sm:block'>
 								Didn't receive the code?
 							</p>
 
