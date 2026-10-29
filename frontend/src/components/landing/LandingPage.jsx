@@ -9,7 +9,7 @@ import LandingFooter from './LandingFooter'
 
 export default function LandingPage() {
 	return (
-		<div className='min-h-screen overflow-x-hidden bg-[#FAFAF7] text-[#202B49]'>
+		<div className='min-h-screen overflow-x-clip bg-[#FAFAF7] text-[#202B49]'>
 			<LandingHeader />
 
 			<main>
