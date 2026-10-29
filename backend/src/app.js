@@ -26,7 +26,7 @@ app.use(middlewares) // using middlewares
 app.use('/api/system', systemRouter)
 app.use('/api/auth', authRouter)
 app.use('/api/accounts', accountRouter)
-app.use('/api/transaction', transactionRouter)
+app.use('/api/transactions', transactionRouter)
 
 // dummy test API for checking server
 app.get('/', (req, res) => {
