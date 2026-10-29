@@ -21,6 +21,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html
 			lang='en'
+			data-scroll-behavior='smooth'
 			className='h-full antialiased'
 		>
 			<body className='flex min-h-full flex-col'>{children}</body>

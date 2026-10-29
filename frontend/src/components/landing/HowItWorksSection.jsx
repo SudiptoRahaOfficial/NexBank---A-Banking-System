@@ -103,18 +103,6 @@ export default function HowItWorksSection() {
 						/>
 					</Link>
 				</div>
-
-				<div className='mt-6 flex items-start justify-center gap-2 text-center text-xs leading-5 text-[#6B7280]'>
-					<CheckCircle2
-						size={16}
-						className='mt-0.5 shrink-0 text-[#15803D]'
-						aria-hidden='true'
-					/>
-					<p>
-						Account creation and verification will be connected to
-						the existing backend during Phase 2.
-					</p>
-				</div>
 			</div>
 		</section>
 	)

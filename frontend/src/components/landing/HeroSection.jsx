@@ -366,10 +366,6 @@ function TrustStrip() {
 					),
 				)}
 			</div>
-
-			<p className='mt-6 text-center text-[9px] font-semibold uppercase tracking-[0.15em] text-[#7C8BA8] sm:mt-7 sm:text-[10px]'>
-				Banking designed around clarity and convenience
-			</p>
 		</div>
 	)
 }

@@ -40,7 +40,7 @@ export default function DashboardPreview() {
 	return (
 		<section
 			aria-labelledby='dashboard-preview-title'
-			className='px-4 pb-20 sm:px-6 sm:pb-24 lg:px-10'
+			className='px-4 sm:px-6 lg:px-10 py-20 sm:py-24'
 		>
 			<div className='mx-auto max-w-280'>
 				<div className='mb-8 text-center'>
