@@ -1,7 +1,5 @@
-import React from 'react'
+import LandingPage from '@/components/landing/LandingPage'
 
-export default function page() {
-  return (
-    <div>welcome to bank app</div>
-  )
+export default function HomePage() {
+	return <LandingPage />
 }
