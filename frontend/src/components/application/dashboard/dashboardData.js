@@ -21,6 +21,7 @@ export const MOCK_DASHBOARD_DATA = {
 			accountNumber: '123456789012',
 			balance: 185000,
 			currency: 'BDT',
+			status: 'Active',
 		},
 		{
 			id: 'account-2',
@@ -29,6 +30,7 @@ export const MOCK_DASHBOARD_DATA = {
 			accountNumber: '987654321098',
 			balance: 63750.5,
 			currency: 'BDT',
+			status: 'Active',
 		},
 	],
 

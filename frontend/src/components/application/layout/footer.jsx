@@ -4,7 +4,7 @@ import CurrentYear from '@/components/shared/CurrentYear'
 
 export default function Footer() {
 	return (
-		<footer className='mt-8 border-t border-[#E2E5F0] bg-white'>
+		<footer className='border-t border-[#E2E5F0] bg-white'>
 			<div className='mx-auto flex max-w-360 flex-col items-center justify-between gap-3 px-4 py-5 text-center sm:px-6 md:flex-row md:text-left lg:px-8'>
 				<p className='text-xs leading-5 text-[#6B7280] sm:text-sm'>
 					&copy; <CurrentYear /> NexBank. All rights reserved.

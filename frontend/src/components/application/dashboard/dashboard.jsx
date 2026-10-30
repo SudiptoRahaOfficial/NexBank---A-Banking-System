@@ -1,7 +1,9 @@
 import DashboardLayout from '@/components/application/layout/layout'
-import WelcomeSection from '@/components/application/dashboard/WelcomeSection'
-import BalanceOverview from '@/components/application/dashboard/BalanceOverview'
+
+import DashboardWelcome from '@/components/application/dashboard/DashboardWelcome'
+import TotalBalanceCard from '@/components/application/dashboard/TotalBalanceCard'
 import QuickActions from '@/components/application/dashboard/QuickActions'
+import AccountsSection from '@/components/application/dashboard/AccountsSection'
 import RecentTransactions from '@/components/application/dashboard/RecentTransactions'
 
 export default function Dashboard() {
@@ -10,15 +12,13 @@ export default function Dashboard() {
 			title='Dashboard'
 			description='Your financial overview'
 		>
-			<div className='mx-auto w-full max-w-360 space-y-6'>
-				<WelcomeSection />
-
-				<BalanceOverview />
-
+			<main className='mx-auto w-full max-w-360 space-y-8'>
+				<DashboardWelcome />
+				<TotalBalanceCard />
 				<QuickActions />
-
+				<AccountsSection />
 				<RecentTransactions />
-			</div>
+			</main>
 		</DashboardLayout>
 	)
 }
