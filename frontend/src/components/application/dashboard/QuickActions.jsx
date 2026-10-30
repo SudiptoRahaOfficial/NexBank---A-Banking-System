@@ -7,8 +7,8 @@ import {
 	ArrowUpRight,
 } from 'lucide-react'
 
-import DashboardCard from '@/components/application/ui/DashboardCard'
-import SectionHeading from '@/components/application/ui/SectionHeading'
+import DashboardCard from '@/components/application/dashboard/DashboardCard'
+import SectionHeading from '@/components/application/dashboard/SectionHeading'
 
 const QUICK_ACTIONS = [
 	{

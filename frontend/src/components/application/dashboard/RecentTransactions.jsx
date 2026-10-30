@@ -6,8 +6,8 @@ import {
 	ArrowRight,
 } from 'lucide-react'
 
-import DashboardCard from '@/components/application/ui/DashboardCard'
-import SectionHeading from '@/components/application/ui/SectionHeading'
+import DashboardCard from '@/components/application/dashboard/DashboardCard'
+import SectionHeading from '@/components/application/dashboard/SectionHeading'
 
 import { MOCK_DASHBOARD_DATA } from './dashboardData'
 import { formatCurrency, formatDate } from './dashboardUtils'
