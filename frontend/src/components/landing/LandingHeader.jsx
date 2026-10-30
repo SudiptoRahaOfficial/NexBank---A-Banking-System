@@ -26,7 +26,7 @@ const styles = {
 	desktopNav: 'hidden items-center gap-8 md:flex',
 
 	navLink:
-		'rounded-md py-2 text-sm font-medium text-[#6B7280] transition-colors hover:text-[#4F46E5] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#4F46E5]',
+		'rounded-md py-2 text-sm font-medium text-[#4B5563] transition-colors hover:text-[#4F46E5] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#4F46E5]',
 
 	signIn: 'inline-flex min-h-10 items-center justify-center rounded-lg px-4 py-2 text-sm font-semibold text-[#202B49] transition-colors hover:bg-[#F4F6FB] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F46E5]',
 
