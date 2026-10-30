@@ -6,9 +6,8 @@ import {
 	ArrowLeftRight,
 	LayoutDashboard,
 	Landmark,
-	LogOut,
 	ReceiptText,
-	ShieldCheck,
+	Settings,
 	Wallet,
 	X,
 } from 'lucide-react'
@@ -36,9 +35,9 @@ const CUSTOMER_NAVIGATION = [
 		icon: ReceiptText,
 	},
 	{
-		label: 'Security Settings',
-		href: '/settings/security',
-		icon: ShieldCheck,
+		label: 'Settings',
+		href: '/settings',
+		icon: Settings,
 	},
 ]
 

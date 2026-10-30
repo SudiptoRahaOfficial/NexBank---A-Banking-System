@@ -57,7 +57,7 @@ export default function Header({
 					/>
 
 					<Link
-						href='/settings/security'
+						href='/settings'
 						aria-label='Open security settings'
 						className='flex items-center gap-3 rounded-xl p-1.5 pr-2 transition-colors hover:bg-[#F4F6FB] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F46E5]'
 					>
