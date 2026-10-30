@@ -6,7 +6,7 @@ export default function AccountsPageHeader() {
 		<section className='flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between'>
 			{/* Page Introduction */}
 			<div className='space-y-1.5'>
-				<h1 className='text-2xl font-semibold tracking-tight text-[#202B49] sm:text-3xl'>
+				<h1 className='text-2xl font-bold tracking-tight text-[#202B49] sm:text-3xl'>
 					My Accounts
 				</h1>
 
