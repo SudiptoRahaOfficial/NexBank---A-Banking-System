@@ -1,5 +1,5 @@
 import Accounts from '@/components/application/accounts/accounts'
 
-export default function DashboardPage() {
+export default function AccountsPage() {
 	return <Accounts />
 }
