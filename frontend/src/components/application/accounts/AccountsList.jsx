@@ -1,9 +1,10 @@
 'use client'
 
-import { Suspense } from 'react'
+import { useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 
 import AccountCard from '@/components/application/accounts/AccountCard'
+import AccountDetailsModal from '@/components/application/accounts/AccountDetailsModal'
 import AccountsEmptyState from '@/components/application/accounts/AccountsEmptyState'
 
 import {
@@ -13,6 +14,8 @@ import {
 
 function AccountsListContent() {
 	const searchParams = useSearchParams()
+
+	const [selectedAccount, setSelectedAccount] = useState(null)
 
 	const searchQuery = (searchParams.get('search') || '').trim().toLowerCase()
 
@@ -45,49 +48,66 @@ function AccountsListContent() {
 	const hasAccounts = accounts.length > 0
 	const hasMatchingAccounts = filteredAccounts.length > 0
 
+	const selectedBalance = selectedAccount
+		? balanceByAccount.get(selectedAccount._id)
+		: undefined
+
 	return (
-		<section
-			aria-labelledby='accounts-list-heading'
-			className='space-y-5'
-		>
-			<div className='flex flex-wrap items-center justify-between gap-3'>
-				<div className='space-y-1'>
-					<h2
-						id='accounts-list-heading'
-						className='text-lg font-semibold text-[#202B49] sm:text-xl'
-					>
-						Your Accounts
-					</h2>
+		<>
+			<section
+				aria-labelledby='accounts-list-heading'
+				className='space-y-5'
+			>
+				<div className='flex flex-wrap items-center justify-between gap-3'>
+					<div className='space-y-1'>
+						<h2
+							id='accounts-list-heading'
+							className='text-lg font-semibold text-[#202B49] sm:text-xl'
+						>
+							Your Accounts
+						</h2>
 
-					<p className='text-sm text-[#6B7280]'>
-						View your account information and balances.
-					</p>
+						<p className='text-sm text-[#6B7280]'>
+							View your account information and balances.
+						</p>
+					</div>
+
+					{hasAccounts && (
+						<span className='rounded-full bg-[#E9EFFF] px-3 py-1 text-xs font-semibold text-[#4F46E5]'>
+							{filteredAccounts.length}{' '}
+							{filteredAccounts.length === 1
+								? 'Account'
+								: 'Accounts'}
+						</span>
+					)}
 				</div>
 
-				{hasAccounts && (
-					<span className='rounded-full bg-[#E9EFFF] px-3 py-1 text-xs font-semibold text-[#4F46E5]'>
-						{filteredAccounts.length}{' '}
-						{filteredAccounts.length === 1 ? 'Account' : 'Accounts'}
-					</span>
+				{!hasAccounts ? (
+					<AccountsEmptyState type='empty' />
+				) : !hasMatchingAccounts ? (
+					<AccountsEmptyState type='no-results' />
+				) : (
+					<div className='grid grid-cols-1 gap-4 lg:grid-cols-2'>
+						{filteredAccounts.map((account) => (
+							<AccountCard
+								key={account._id}
+								account={account}
+								balance={balanceByAccount.get(account._id)}
+								onClick={() => setSelectedAccount(account)}
+							/>
+						))}
+					</div>
 				)}
-			</div>
+			</section>
 
-			{!hasAccounts ? (
-				<AccountsEmptyState type='empty' />
-			) : !hasMatchingAccounts ? (
-				<AccountsEmptyState type='no-results' />
-			) : (
-				<div className='grid grid-cols-1 gap-4 lg:grid-cols-2'>
-					{filteredAccounts.map((account) => (
-						<AccountCard
-							key={account._id}
-							account={account}
-							balance={balanceByAccount.get(account._id)}
-						/>
-					))}
-				</div>
+			{selectedAccount && (
+				<AccountDetailsModal
+					account={selectedAccount}
+					balance={selectedBalance}
+					onClose={() => setSelectedAccount(null)}
+				/>
 			)}
-		</section>
+		</>
 	)
 }
 

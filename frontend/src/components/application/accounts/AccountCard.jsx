@@ -14,7 +14,7 @@ const STATUS_STYLES = {
 	INACTIVE: 'bg-[#F3F4F6] text-[#6B7280]',
 }
 
-export default function AccountCard({ account, balance }) {
+export default function AccountCard({ account, balance, onClick }) {
 	const isValidBalance =
 		typeof balance === 'number' && Number.isFinite(balance)
 
@@ -23,7 +23,12 @@ export default function AccountCard({ account, balance }) {
 	const statusStyles = STATUS_STYLES[status] || 'bg-[#F3F4F6] text-[#6B7280]'
 
 	return (
-		<article className='rounded-2xl border border-[#E2E5F0] bg-white p-5 shadow-sm transition-shadow hover:shadow-md sm:p-6'>
+		<button
+			type='button'
+			onClick={onClick}
+			aria-label={`View details for account ${account._id}`}
+			className='w-full rounded-2xl border border-[#E2E5F0] bg-white p-5 text-left shadow-sm transition-all duration-200 hover:border-[#C7D2FE] hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#4F46E5] sm:p-6 cursor-pointer'
+		>
 			<div className='flex items-start justify-between gap-3'>
 				<div className='flex min-w-0 items-center gap-3'>
 					<div className='flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#E9EFFF] text-[#4F46E5]'>
@@ -79,6 +84,12 @@ export default function AccountCard({ account, balance }) {
 					</p>
 				)}
 			</div>
-		</article>
+
+			<div className='mt-4 flex items-center justify-end'>
+				<span className='text-xs font-semibold text-[#4F46E5]'>
+					View account details →
+				</span>
+			</div>
+		</button>
 	)
 }

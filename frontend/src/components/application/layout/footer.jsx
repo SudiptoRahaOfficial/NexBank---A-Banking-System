@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { ShieldCheck } from 'lucide-react'
 import CurrentYear from '@/components/shared/CurrentYear'
 
@@ -11,16 +10,13 @@ export default function Footer() {
 				</p>
 
 				<div className='flex flex-wrap items-center justify-center gap-x-5 gap-y-2'>
-					<Link
-						href='/settings/security'
-						className='inline-flex items-center gap-1.5 text-xs font-medium text-[#6B7280] hover:text-[#4F46E5] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F46E5] sm:text-sm'
-					>
+					<span className='inline-flex items-center gap-1.5 text-xs font-medium text-[#6B7280] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F46E5] sm:text-sm'>
 						<ShieldCheck
 							size={15}
 							aria-hidden='true'
 						/>
 						Security
-					</Link>
+					</span>
 
 					<span className='text-xs text-[#9CA3AF]'>
 						Personal Banking
