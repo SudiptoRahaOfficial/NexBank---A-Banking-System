@@ -1,4 +1,4 @@
-import SystemFundTransfer from '@/components/system/transfer/transfer'
+import SystemFundTransfer from '@/components/application/system-transfer/transfer'
 
 export default function SystemFundTransferPage() {
 	return <SystemFundTransfer />

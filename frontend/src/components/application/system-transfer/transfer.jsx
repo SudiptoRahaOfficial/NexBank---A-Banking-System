@@ -1,6 +1,6 @@
-import SystemFundingPageHeader from '@/components/system/transfer/SystemFundingPageHeader'
-import FundingOverview from '@/components/system/transfer/FundingOverview'
-import InitialFundingForm from '@/components/system/transfer/InitialFundingForm'
+import SystemFundingPageHeader from '@/components/application/system-transfer/SystemFundingPageHeader'
+import FundingOverview from '@/components/application/system-transfer/FundingOverview'
+import InitialFundingForm from '@/components/application/system-transfer/InitialFundingForm'
 
 export default function SystemFundTransfer() {
 	return (
