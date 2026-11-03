@@ -6,7 +6,19 @@ import QuickActions from '@/components/application/dashboard/QuickActions'
 import AccountsSection from '@/components/application/dashboard/AccountsSection'
 import RecentTransactions from '@/components/application/dashboard/RecentTransactions'
 
+import SystemDashboard from '@/components/application/dashboard/SystemDashboard'
+
+// Temporary mock authenticated user.
+// Replace this with the actual authenticated user later.
+const MOCK_USER = {
+	systemUser: false,
+}
+
 export default function Dashboard() {
+	if (MOCK_USER.systemUser === true) {
+		return <SystemDashboard />
+	}
+
 	return (
 		<DashboardLayout
 			title='Dashboard'
