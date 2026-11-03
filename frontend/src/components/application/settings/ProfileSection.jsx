@@ -5,7 +5,6 @@ import {
 	Check,
 	CheckCircle2,
 	Edit3,
-	LoaderCircle,
 	Mail,
 	MapPin,
 	Phone,
@@ -196,6 +195,7 @@ export default function ProfileSection() {
 				<div className='space-y-7 px-5 py-6 sm:px-7'>
 					<ProfileImageUpload
 						initialImage={profile.profileImage}
+						isEditing={isEditing}
 						onImageChange={handleImageChange}
 					/>
 

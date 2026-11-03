@@ -9,6 +9,7 @@ const ALLOWED_IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/webp']
 
 export default function ProfileImageUpload({
 	initialImage = null,
+	isEditing = false,
 	onImageChange,
 }) {
 	const fileInputRef = useRef(null)
@@ -66,13 +67,19 @@ export default function ProfileImageUpload({
 	}
 
 	return (
-		<div className='flex flex-col gap-5 sm:flex-row sm:items-center'>
+		<div
+			className={`flex flex-col gap-5 ${
+				isEditing
+					? 'sm:flex-row sm:items-center'
+					: 'items-center justify-center'
+			}`}
+		>
 			<div className='relative size-24 shrink-0'>
 				<div className='flex size-24 items-center justify-center overflow-hidden rounded-full border border-[#E2E5F0] bg-[#F4F6FB]'>
 					{preview ? (
 						<img
 							src={preview}
-							alt='Profile preview'
+							alt='Profile picture'
 							className='size-full object-cover'
 						/>
 					) : (
@@ -84,69 +91,74 @@ export default function ProfileImageUpload({
 					)}
 				</div>
 
-				<button
-					type='button'
-					onClick={() => fileInputRef.current?.click()}
-					aria-label='Choose profile image'
-					className='absolute right-0 bottom-0 flex size-9 items-center justify-center rounded-full border-2 border-white bg-[#4F46E5] text-white shadow-sm transition-colors hover:bg-[#4338CA] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F46E5] cursor-pointer'
-				>
-					<Camera size={16} />
-				</button>
-			</div>
-
-			<div className='min-w-0 space-y-3'>
-				<div>
-					<h3 className='text-sm font-semibold text-[#202B49]'>
-						Profile photo
-					</h3>
-
-					<p className='mt-1 text-sm leading-5 text-[#6B7280]'>
-						Choose a clear photo to personalize your banking
-						profile.
-					</p>
-				</div>
-
-				<div className='flex flex-wrap items-center gap-3'>
+				{isEditing && (
 					<button
 						type='button'
 						onClick={() => fileInputRef.current?.click()}
-						className='inline-flex items-center gap-2 rounded-lg border border-[#E2E5F0] bg-white px-3.5 py-2 text-sm font-medium text-[#202B49] transition-colors hover:bg-[#F4F6FB] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F46E5] cursor-pointer'
+						aria-label='Choose profile image'
+						className='absolute right-0 bottom-0 flex size-9 items-center justify-center rounded-full border-2 border-white bg-[#4F46E5] text-white shadow-sm transition-colors hover:bg-[#4338CA] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F46E5] cursor-pointer'
 					>
-						<ImagePlus size={16} />
-						Choose image
+						<Camera size={16} />
 					</button>
-
-					{preview && (
-						<button
-							type='button'
-							onClick={handleRemoveImage}
-							className='inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-[#DC2626] transition-colors hover:bg-[#FEF2F2] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#DC2626] cursor-pointer'
-						>
-							<Trash2 size={15} />
-							Remove
-						</button>
-					)}
-				</div>
-
-				<p className='text-xs text-[#6B7280]'>
-					JPG, PNG, or WebP. Maximum file size: 3 MB.
-				</p>
-
-				{error && (
-					<p
-						role='alert'
-						className='text-sm font-medium text-[#DC2626]'
-					>
-						{error}
-					</p>
 				)}
 			</div>
+
+			{isEditing && (
+				<div className='min-w-0 space-y-3'>
+					<div>
+						<h3 className='text-sm font-semibold text-[#202B49]'>
+							Profile photo
+						</h3>
+
+						<p className='mt-1 text-sm leading-5 text-[#6B7280]'>
+							Choose a clear photo to personalize your banking
+							profile.
+						</p>
+					</div>
+
+					<div className='flex flex-wrap items-center gap-3'>
+						<button
+							type='button'
+							onClick={() => fileInputRef.current?.click()}
+							className='inline-flex items-center gap-2 rounded-lg border border-[#E2E5F0] bg-white px-3.5 py-2 text-sm font-medium text-[#202B49] transition-colors hover:bg-[#F4F6FB] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F46E5] cursor-pointer'
+						>
+							<ImagePlus size={16} />
+							Choose image
+						</button>
+
+						{preview && (
+							<button
+								type='button'
+								onClick={handleRemoveImage}
+								className='inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-[#DC2626] transition-colors hover:bg-[#FEF2F2] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#DC2626]'
+							>
+								<Trash2 size={15} />
+								Remove
+							</button>
+						)}
+					</div>
+
+					<p className='text-xs text-[#6B7280]'>
+						JPG, PNG, or WebP. Maximum file size: 3 MB.
+					</p>
+
+					{error && (
+						<p
+							role='alert'
+							className='text-sm font-medium text-[#DC2626]'
+						>
+							{error}
+						</p>
+					)}
+				</div>
+			)}
 
 			<input
 				ref={fileInputRef}
 				type='file'
 				accept='image/jpeg,image/png,image/webp'
 				onChange={handleImageSelect}
+				disabled={!isEditing}
 				className='hidden'
 				aria-label='Upload profile image'
 			/>
