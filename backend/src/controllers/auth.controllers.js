@@ -128,6 +128,7 @@ async function signupController(req, res) {
 				name: user.name,
 				email: user.email,
 				verified: user.verified,
+				systemUser: user.systemUser,
 			},
 		})
 	} catch (error) {
@@ -504,6 +505,7 @@ async function signinController(req, res) {
 				name: user.name,
 				email: user.email,
 				verified: user.verified,
+				systemUser: user.systemUser,
 			},
 			accessToken,
 		})
@@ -637,9 +639,10 @@ async function refreshTokenController(req, res) {
 			status: 'success',
 			user: {
 				id: user._id,
-				username: user.username,
+				name: user.name,
 				email: user.email,
 				verified: user.verified,
+				systemUser: user.systemUser,
 			},
 			accessToken,
 		})
